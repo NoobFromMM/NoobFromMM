@@ -43,6 +43,7 @@ showcase of my Claude Code workflow.
 - 🔌 [MCP config](./.mcp.json) — safe filesystem access for Claude Code
 - 📽 [PechaKucha slides](./slides/pechakucha-6x20.md) — 6 slides, 20 seconds
   each
+- 🌐 [Portfolio page](./index.html) — polished single-page portfolio site
 
 ---
 
