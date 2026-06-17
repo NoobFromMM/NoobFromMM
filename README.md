@@ -2,6 +2,8 @@
 
 ![Hi there! I'm NoobFromMM — Network Engineer · Local App Founder · Server Builder](./assets/intro.gif)
 
+🌐 Portfolio website: [noobfrommm.github.io/NoobFromMM](https://noobfrommm.github.io/NoobFromMM/)
+
 **Network engineer. Founder of Local app. Building practical systems.**
 
 ---
