@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NoobFromMM — Learning in Public</title>
+<title>Myat Thaw Maung — NoobFromMM</title>
 <style>
   /* ── Reset & Base ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:        #0d1117;
-    --card-bg:   #161b22;
-    --border:    #30363d;
-    --text:      #c9d1d9;
-    --muted:     #b0b8c2;
-    --accent:    #58a6ff;
-    --accent-dim:#1f6feb;
-    --green:     #3fb950;
-    --purple:    #a371f7;
-    --orange:    #d29922;
+    --bg:          #0d1117;
+    --card-bg:     #161b22;
+    --border:      #30363d;
+    --text:        #c9d1d9;
+    --muted:       #b0b8c2;
+    --accent:      #58a6ff;
+    --accent-dim:  #1f6feb;
+    --green:       #3fb950;
+    --purple:      #a371f7;
+    --orange:      #d29922;
   }
 
   body {
@@ -29,7 +29,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── Layout ── */
   .container {
     max-width: 780px;
     margin: 0 auto;
@@ -37,13 +36,20 @@
   }
 
   section {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ── Section divider ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
+    margin: 1rem 0 0 0;
   }
 
   /* ── Typography ── */
   h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; }
   h2 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
@@ -56,27 +62,65 @@
 
   /* ── Hero ── */
   .hero {
-    padding: 3rem 0 2rem;
+    padding: 2.5rem 0 1.5rem;
     text-align: center;
     background: linear-gradient(180deg, #1a2332 0%, var(--bg) 100%);
     border-radius: 12px;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
   .hero h1 { margin-bottom: 0.35rem; }
   .hero .tagline {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .hero .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
   .hero .badge {
     display: inline-block;
-    margin-top: 0.75rem;
-    padding: 0.2rem 0.75rem;
+    padding: 0.25rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .badge.network {
     background: rgba(88, 166, 255, 0.12);
     border: 1px solid rgba(88, 166, 255, 0.25);
-    border-radius: 20px;
-    font-size: 0.8rem;
     color: var(--accent);
+  }
+  .badge.founder {
+    background: rgba(63, 185, 80, 0.12);
+    border: 1px solid rgba(63, 185, 80, 0.25);
+    color: var(--green);
+  }
+  .badge.servers {
+    background: rgba(163, 113, 247, 0.12);
+    border: 1px solid rgba(163, 113, 247, 0.25);
+    color: var(--purple);
+  }
+
+  /* ── Banner Placeholder ── */
+  .banner-placeholder {
+    min-height: 120px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+    background: var(--card-bg);
+    opacity: 0.65;
+  }
+  .banner-placeholder .banner-hint {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
   }
 
   /* ── Cards ── */
@@ -93,8 +137,28 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
+  /* ── About Grid ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .about-grid .card {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .about-grid .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+
   /* ── Timeline ── */
-  .timeline { position: relative; padding-left: 1.5rem; }
+  .timeline {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-top: 0.75rem;
+  }
   .timeline::before {
     content: "";
     position: absolute;
@@ -120,69 +184,47 @@
     background: var(--accent);
     border: 2px solid var(--bg);
   }
-  .timeline-item .chapter {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-  }
-  .timeline-item p { font-size: 0.9rem; margin-bottom: 0.25rem; }
   .timeline-item.current::before {
     background: var(--green);
     box-shadow: 0 0 0 3px rgba(63, 185, 80, 0.2);
   }
-  .timeline-item.current .chapter { color: var(--green); }
+  .timeline-item .chapter {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+  .timeline-item.current .chapter {
+    color: var(--green);
+  }
+  .timeline-item p {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
   .timeline-item .evidence {
     font-size: 0.8rem;
     color: var(--muted);
   }
-
-  /* ── Workflow Steps ── */
-  .steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    counter-reset: step;
-  }
-  .step {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.85rem;
-    counter-increment: step;
-  }
-  .step::before {
-    content: counter(step);
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    background: var(--accent-dim);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 700;
-  }
-  .step-body { font-size: 0.92rem; }
-  .step-body strong { color: var(--text); }
-  .step-body span { color: var(--muted); font-size: 0.82rem; }
 
   /* ── Toolchain Grid ── */
   .toolchain-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    margin-top: 0.75rem;
   }
-  .toolchain-grid .card { text-align: center; margin-bottom: 0; }
+  .toolchain-grid .card {
+    text-align: center;
+    margin-bottom: 0;
+  }
   .toolchain-grid .icon {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
   }
   .toolchain-grid .filepath {
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: var(--muted);
     background: rgba(255,255,255,0.04);
     padding: 0.15rem 0.4rem;
@@ -196,23 +238,25 @@
     color: var(--accent);
   }
 
-  /* ── Project Card ── */
-  .project-links {
+  /* ── Evidence links ── */
+  .evidence-links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.75rem;
   }
-  .project-links a {
+  .evidence-links a {
     font-size: 0.82rem;
     padding: 0.25rem 0.65rem;
     border: 1px solid var(--border);
     border-radius: 16px;
     transition: border-color 0.15s;
+    color: var(--text);
   }
-  .project-links a:hover {
+  .evidence-links a:hover {
     border-color: var(--accent);
     text-decoration: none;
+    color: var(--accent);
   }
 
   /* ── Footer ── */
@@ -226,13 +270,8 @@
   footer .quote {
     font-style: italic;
     margin-top: 0.5rem;
+    color: var(--muted);
   }
-
-  /* ── Status dots ── */
-  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 0.35rem; }
-  .dot.green  { background: var(--green); }
-  .dot.blue   { background: var(--accent); }
-  .dot.purple { background: var(--purple); }
 </style>
 </head>
 <body>
@@ -241,38 +280,80 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero">
-    <h1>&#x1F44B; Hey, I&rsquo;m NoobFromMM</h1>
-    <p class="tagline">Learning to code. Building in public. Figuring it out one commit at a time.</p>
-    <span class="badge">Chapter 3 &mdash; Profile OS</span>
+    <h1>Myat Thaw Maung</h1>
+    <p class="tagline">Network engineer. Founder of Local app. Server builder.</p>
+    <div class="badge-row">
+      <span class="badge network">Network Engineer</span>
+      <span class="badge founder">Founder</span>
+      <span class="badge servers">Server Builder</span>
+    </div>
   </section>
+
+  <!-- ═══ BANNER PLACEHOLDER ═══ -->
+  <!--
+    PLACEHOLDER: Add a 780×200 dark-themed animated GIF or static banner here.
+    Recommended: a subtle tech-themed banner — circuit lines, server rack
+    silhouette, or a network topology animation with dark background (#0d1117).
+    Keep it under 500 KB for fast loading.
+  -->
+  <div class="banner-placeholder">
+    <div class="banner-hint">
+      🖼 Banner placeholder<br>
+      <span style="font-size:0.72rem;">Suggested: 780×200 dark tech-themed GIF &mdash; circuit lines, server silhouette, or network animation</span>
+    </div>
+  </div>
 
   <!-- ═══ ABOUT ═══ -->
   <section>
     <h2>About</h2>
     <p>
-      I&rsquo;m working through <strong>Vibe Code Tours</strong> &mdash; a self-paced
-      learning journey where I build real projects with
-      <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a>
-      and share the process on GitHub. I don&rsquo;t have a CS degree, a fancy title,
-      or years of experience. I&rsquo;m just someone who wants to learn by doing &mdash;
-      and keep the evidence public.
+      I'm a network engineer with bold ideas. I hold a Bachelor of Arts from the
+      <strong>University of Monywa</strong> (class of 2013). I founded
+      <strong>Local app</strong> and I currently run my own business, where I
+      build and maintain servers.
     </p>
     <p>
-      Right now I&rsquo;m focused on: AI-assisted coding, prompt engineering, agent
-      workflows, and building a visible toolchain that proves I know how to use
-      these tools.
+      I like building practical tools and systems — things that solve real
+      problems and keep running. I'm also learning modern developer workflows
+      with
+      <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a>
+      through <strong>Vibe Code Tours</strong>.
     </p>
+
+    <div class="about-grid">
+      <div class="card">
+        <div class="icon">🏢</div>
+        <h3>Business</h3>
+        <p>Running my own business full-time. Founder of Local app.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🖥</div>
+        <h3>Servers</h3>
+        <p>Building and maintaining servers for production workloads.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>Education</h3>
+        <p>BA from University of Monywa, class of 2013.</p>
+      </div>
+    </div>
   </section>
 
-  <!-- ═══ VIBE CODE TOURS ═══ -->
+  <div class="section-divider"></div>
+
+  <!-- ═══ LEARNING JOURNEY ═══ -->
   <section>
-    <h2>Vibe Code Tours</h2>
+    <h2>Learning Journey — Vibe Code Tours</h2>
+    <p>
+      I'm working through Vibe Code Tours to learn AI-assisted development —
+      prompt engineering, agent workflows, and building with Claude Code.
+    </p>
     <div class="timeline">
 
       <div class="timeline-item">
         <span class="chapter">Chapter 1</span>
         <h3>Repo &amp; CLAUDE.md Setup</h3>
-        <p>Created the GitHub profile repo and configured Claude Code with a project-level CLAUDE.md.</p>
+        <p>Created this GitHub profile repo and configured Claude Code project tooling.</p>
         <span class="evidence">
           Evidence: <a href="https://github.com/NoobFromMM/NoobFromMM" target="_blank" rel="noopener">NoobFromMM/NoobFromMM</a>
         </span>
@@ -281,16 +362,16 @@
       <div class="timeline-item">
         <span class="chapter">Chapter 2</span>
         <h3>Methodology Foundation</h3>
-        <p>Chose the Superpowers methodology &mdash; skills, agents, and MCP &mdash; as the framework for every chapter.</p>
+        <p>Adopted the Superpowers methodology — skills, agents, and MCP — as the build framework for every chapter.</p>
         <span class="evidence">
           Evidence: <a href="./methodology.md">methodology.md</a>
         </span>
       </div>
 
       <div class="timeline-item current">
-        <span class="chapter">Chapter 3 &mdash; Current</span>
+        <span class="chapter">Chapter 3 — Current</span>
         <h3>Profile OS</h3>
-        <p>Built a polished GitHub profile portfolio and Claude Code workflow showcase. Spec, methodology, MCP config, skill, agent, PechaKucha slides &mdash; all visible in the repo.</p>
+        <p>Built a polished portfolio and Claude Code workflow showcase. Spec, MCP, skill, agent, PechaKucha slides — all visible in this repo.</p>
         <span class="evidence">
           Evidence: <a href="./spec.md">spec.md</a>,
           <a href="./slides/pechakucha-6x20.md">pechakucha-6x20.md</a>
@@ -300,94 +381,57 @@
     </div>
   </section>
 
-  <!-- ═══ CLAUDE CODE WORKFLOW ═══ -->
-  <section>
-    <h2>Claude Code Workflow</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-body">
-          <strong>Write a spec</strong><br>
-          <span>spec.md defines &ldquo;done&rdquo; before any code is written</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-body">
-          <strong>Pick a methodology</strong><br>
-          <span>Superpowers: skills + agents + MCP guide every build</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-body">
-          <strong>Build in small slices</strong><br>
-          <span>One file, one concern, one commit &mdash; no monoliths</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-body">
-          <strong>Review with agents</strong><br>
-          <span>profile-reviewer checks clarity, honesty, and Ch3 readiness</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-body">
-          <strong>Polish with skills</strong><br>
-          <span>ui-ux-pro-max reviews layout, readability, and visual hierarchy</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-body">
-          <strong>Ship and reflect</strong><br>
-          <span>Commit, push, document what I learned &mdash; repeat for the next chapter</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="section-divider"></div>
 
-  <!-- ═══ TOOLCHAIN ═══ -->
+  <!-- ═══ HOW THIS WAS BUILT ═══ -->
   <section>
-    <h2>Toolchain</h2>
+    <h2>How This Portfolio Was Built</h2>
+    <p>
+      This page was built with the <strong>Superpowers</strong> methodology
+      inside Claude Code — three built-in capabilities that review and improve
+      every slice of work:
+    </p>
     <div class="toolchain-grid">
 
       <div class="card">
-        <div class="icon">&#x1F9E0;</div>
-        <h3>Skill</h3>
-        <p>Reusable UI/UX review prompt for profile presentation</p>
+        <div class="icon">🧠</div>
+        <h3>UI UX Pro Max</h3>
+        <p>Skill that reviewed layout, spacing, readability, and visual hierarchy</p>
         <a href="./.claude/skills/ui-ux-pro-max/SKILL.md" class="filepath">.claude/skills/ui-ux-pro-max/SKILL.md</a>
       </div>
 
       <div class="card">
-        <div class="icon">&#x1F916;</div>
-        <h3>Agent</h3>
-        <p>Independent sub-agent for clarity, honesty, and Ch3 readiness checks</p>
+        <div class="icon">🤖</div>
+        <h3>Profile Reviewer</h3>
+        <p>Agent that checked clarity, honesty, structure, and Ch3 readiness</p>
         <a href="./.claude/agents/profile-reviewer.md" class="filepath">.claude/agents/profile-reviewer.md</a>
       </div>
 
       <div class="card">
-        <div class="icon">&#x1F50C;</div>
-        <h3>MCP</h3>
-        <p>Filesystem server scoped to <code>./</code> &mdash; safe project access, no secrets</p>
+        <div class="icon">🔌</div>
+        <h3>Filesystem MCP</h3>
+        <p>Safe project file access — scoped to <code>./</code>, no API keys, no secrets</p>
         <a href="./.mcp.json" class="filepath">.mcp.json</a>
       </div>
 
     </div>
   </section>
 
-  <!-- ═══ PROJECT ═══ -->
+  <div class="section-divider"></div>
+
+  <!-- ═══ PROJECT EVIDENCE ═══ -->
   <section>
-    <h2>Project</h2>
+    <h2>Project Evidence</h2>
     <div class="card">
-      <h3>&#x1F5A5; NoobFromMM Profile OS</h3>
-      <p>
-        This repo is the project. A GitHub profile portfolio and Claude Code
-        workflow showcase built with the Superpowers methodology. Every file is
-        evidence that I can configure skills, agents, and MCP.
-      </p>
-      <div class="project-links">
-        <a href="./spec.md">Spec</a>
-        <a href="./methodology.md">Methodology</a>
-        <a href="./slides/pechakucha-6x20.md">Slides</a>
-        <a href="./README.md">README</a>
-        <a href="https://github.com/NoobFromMM/NoobFromMM" target="_blank" rel="noopener">GitHub</a>
+      <h3>Ch3 Deliverables</h3>
+      <p>Every Chapter 3 requirement is a verifiable file in this repo:</p>
+      <div class="evidence-links">
+        <a href="./spec.md">📋 Spec</a>
+        <a href="./methodology.md">📓 Methodology</a>
+        <a href="./.mcp.json">🔌 MCP Config</a>
+        <a href="./.claude/skills/ui-ux-pro-max/SKILL.md">🧠 Skill</a>
+        <a href="./.claude/agents/profile-reviewer.md">🤖 Agent</a>
+        <a href="./slides/pechakucha-6x20.md">📽 Slides</a>
       </div>
     </div>
   </section>
@@ -397,7 +441,7 @@
     <p>
       <a href="https://github.com/NoobFromMM" target="_blank" rel="noopener">github.com/NoobFromMM</a>
     </p>
-    <p class="quote">&ldquo;Every expert was once a beginner. I&rsquo;m just doing it in public.&rdquo;</p>
+    <p class="quote">"Building things that work. Learning out loud."</p>
   </footer>
 
 </div>
