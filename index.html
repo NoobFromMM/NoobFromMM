@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Myat Thaw Maung — NoobFromMM</title>
 <style>
-  /* ── Reset & Base ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -15,10 +14,8 @@
     --text:        #c9d1d9;
     --muted:       #b0b8c2;
     --accent:      #58a6ff;
-    --accent-dim:  #1f6feb;
     --green:       #3fb950;
     --purple:      #a371f7;
-    --orange:      #d29922;
   }
 
   body {
@@ -35,238 +32,100 @@
     padding: 2rem 1.25rem;
   }
 
-  section {
-    margin-bottom: 3.5rem;
-  }
+  section { margin-bottom: 3rem; }
 
-  /* ── Section divider ── */
-  .section-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
-    margin: 1rem 0 0 0;
-  }
-
-  /* ── Typography ── */
   h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; }
   h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
+    font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
   }
   h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.35rem; }
   p  { color: var(--muted); margin-bottom: 0.75rem; }
   a  { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  /* ── Hero ── */
+  /* Hero */
   .hero {
-    padding: 2.5rem 0 1.5rem;
-    text-align: center;
+    padding: 2.5rem 0 1.5rem; text-align: center;
     background: linear-gradient(180deg, #1a2332 0%, var(--bg) 100%);
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
+    border-radius: 12px; margin-bottom: 1.5rem;
   }
-  .hero h1 { margin-bottom: 0.35rem; }
   .hero .tagline {
-    font-size: 1.05rem;
-    color: var(--muted);
-    margin-bottom: 0.25rem;
+    font-size: 1.05rem; color: var(--muted); margin-bottom: 0.25rem;
   }
   .hero .badge-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1rem;
   }
   .hero .badge {
-    display: inline-block;
-    padding: 0.25rem 0.85rem;
-    border-radius: 20px;
-    font-size: 0.78rem;
-    font-weight: 600;
+    display: inline-block; padding: 0.25rem 0.85rem; border-radius: 20px;
+    font-size: 0.78rem; font-weight: 600;
   }
   .badge.network {
-    background: rgba(88, 166, 255, 0.12);
-    border: 1px solid rgba(88, 166, 255, 0.25);
-    color: var(--accent);
+    background: rgba(88,166,255,0.12); border: 1px solid rgba(88,166,255,0.25); color: var(--accent);
   }
   .badge.founder {
-    background: rgba(63, 185, 80, 0.12);
-    border: 1px solid rgba(63, 185, 80, 0.25);
-    color: var(--green);
+    background: rgba(63,185,80,0.12); border: 1px solid rgba(63,185,80,0.25); color: var(--green);
   }
   .badge.servers {
-    background: rgba(163, 113, 247, 0.12);
-    border: 1px solid rgba(163, 113, 247, 0.25);
-    color: var(--purple);
+    background: rgba(163,113,247,0.12); border: 1px solid rgba(163,113,247,0.25); color: var(--purple);
   }
 
-  /* ── Banner ── */
+  /* Banner */
   .banner {
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    overflow: hidden;
-    line-height: 0;
+    margin-bottom: 2rem; border-radius: 10px; overflow: hidden; line-height: 0;
   }
-  .banner-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    display: block;
-  }
+  .banner-img { width: 100%; height: auto; border-radius: 10px; display: block; }
 
-  /* ── Cards ── */
+  /* Cards */
   .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 1rem;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1rem;
   }
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  .card ul { list-style: none; }
+  .card li { padding: 0.35rem 0; color: var(--text); }
+  .card li::before { margin-right: 0.5rem; }
+
+  /* YAML block */
+  .yaml-block {
+    background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem 1.5rem; font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    font-size: 0.9rem; color: var(--green); line-height: 1.8;
   }
 
-  /* ── About Grid ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 1rem;
-    margin-top: 1.25rem;
-  }
-  .about-grid .card {
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .about-grid .icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.4rem;
+  /* Quote */
+  .quote {
+    font-style: italic; color: var(--muted); font-size: 1rem;
+    padding: 1.25rem 1.5rem; border-left: 3px solid var(--accent);
+    background: var(--card-bg); border-radius: 0 8px 8px 0;
   }
 
-  /* ── Timeline ── */
-  .timeline {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-top: 0.75rem;
+  /* Contact */
+  .contact-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .contact-links a {
+    font-size: 0.9rem; padding: 0.35rem 0.85rem; border: 1px solid var(--border);
+    border-radius: 16px; color: var(--text); transition: border-color 0.15s;
   }
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.4rem;
-    bottom: 0.4rem;
-    width: 2px;
-    background: var(--border);
+  .contact-links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  /* Evidence footer */
+  .evidence-footer {
+    text-align: center; padding: 1.5rem 0 0.5rem; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.72rem;
   }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 1.5rem;
-    padding-left: 1.25rem;
-  }
-  .timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -1.625rem;
-    top: 0.5rem;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    border: 2px solid var(--bg);
-  }
-  .timeline-item.current::before {
-    background: var(--green);
-    box-shadow: 0 0 0 3px rgba(63, 185, 80, 0.2);
-  }
-  .timeline-item .chapter {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--accent);
-  }
-  .timeline-item.current .chapter {
-    color: var(--green);
-  }
-  .timeline-item p {
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-  }
-  .timeline-item .evidence {
-    font-size: 0.8rem;
-    color: var(--muted);
+  .evidence-footer a { color: var(--muted); }
+  .evidence-footer a:hover { color: var(--accent); }
+
+  /* Section divider */
+  .section-divider {
+    height: 1px; margin: 1rem 0 0 0;
+    background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%);
   }
 
-  /* ── Toolchain Grid ── */
-  .toolchain-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 0.75rem;
-  }
-  .toolchain-grid .card {
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .toolchain-grid .icon {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-  }
-  .toolchain-grid .filepath {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-    background: rgba(255,255,255,0.04);
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
-    word-break: break-all;
-    display: inline-block;
-    text-decoration: none;
-  }
-  .toolchain-grid .filepath:hover {
-    text-decoration: underline;
-    color: var(--accent);
-  }
-
-  /* ── Evidence links ── */
-  .evidence-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-  }
-  .evidence-links a {
-    font-size: 0.82rem;
-    padding: 0.25rem 0.65rem;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    transition: border-color 0.15s;
-    color: var(--text);
-  }
-  .evidence-links a:hover {
-    border-color: var(--accent);
-    text-decoration: none;
-    color: var(--accent);
-  }
-
-  /* ── Footer ── */
   footer {
-    text-align: center;
-    padding: 2rem 0 1rem;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.82rem;
+    text-align: center; padding: 2rem 0 1rem; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.82rem;
   }
-  footer .quote {
-    font-style: italic;
-    margin-top: 0.5rem;
-    color: var(--muted);
-  }
+  footer .quote { font-style: italic; margin-top: 0.5rem; border: none; background: none; padding: 0; }
 </style>
 </head>
 <body>
@@ -289,144 +148,67 @@
     <img
       src="./assets/intro.gif"
       alt="Hi there! I'm NoobFromMM — Network Engineer · Local App Founder · Server Builder"
-      width="900"
-      height="170"
-      class="banner-img"
+      width="900" height="170" class="banner-img"
     >
   </div>
 
-  <!-- ═══ ABOUT ═══ -->
+  <!-- ═══ ABOUT ME ═══ -->
   <section>
-    <h2>About</h2>
-    <p>
-      I'm a network engineer with bold ideas. I hold a Bachelor of Arts from the
-      <strong>University of Monywa</strong> (class of 2013). I founded
-      <strong>Local app</strong> and I currently run my own business, where I
-      build and maintain servers.
-    </p>
-    <p>
-      I like building practical tools and systems — things that solve real
-      problems and keep running. I'm also learning modern developer workflows
-      with
-      <a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a>
-      through <strong>Vibe Code Tours</strong>.
-    </p>
-
-    <div class="about-grid">
-      <div class="card">
-        <div class="icon">🏢</div>
-        <h3>Business</h3>
-        <p>Running my own business full-time. Founder of Local app.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🖥</div>
-        <h3>Servers</h3>
-        <p>Building and maintaining servers for production workloads.</p>
-      </div>
-      <div class="card">
-        <div class="icon">🎓</div>
-        <h3>Education</h3>
-        <p>BA from University of Monywa, class of 2013.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ═══ LEARNING JOURNEY ═══ -->
-  <section>
-    <h2>Learning Journey — Vibe Code Tours</h2>
-    <p>
-      I'm working through Vibe Code Tours to learn AI-assisted development —
-      prompt engineering, agent workflows, and building with Claude Code.
-    </p>
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <span class="chapter">Chapter 1</span>
-        <h3>Repo &amp; CLAUDE.md Setup</h3>
-        <p>Created this GitHub profile repo and configured Claude Code project tooling.</p>
-        <span class="evidence">
-          Evidence: <a href="https://github.com/NoobFromMM/NoobFromMM" target="_blank" rel="noopener">NoobFromMM/NoobFromMM</a>
-        </span>
-      </div>
-
-      <div class="timeline-item">
-        <span class="chapter">Chapter 2</span>
-        <h3>Methodology Foundation</h3>
-        <p>Adopted the Superpowers methodology — skills, agents, and MCP — as the build framework for every chapter.</p>
-        <span class="evidence">
-          Evidence: <a href="./methodology.md">methodology.md</a>
-        </span>
-      </div>
-
-      <div class="timeline-item current">
-        <span class="chapter">Chapter 3 — Current</span>
-        <h3>Profile OS</h3>
-        <p>Built a polished portfolio and Claude Code workflow showcase. Spec, MCP, skill, agent, PechaKucha slides — all visible in this repo.</p>
-        <span class="evidence">
-          Evidence: <a href="./spec.md">spec.md</a>,
-          <a href="./slides/pechakucha-6x20.md">pechakucha-6x20.md</a>
-        </span>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ═══ HOW THIS WAS BUILT ═══ -->
-  <section>
-    <h2>How This Portfolio Was Built</h2>
-    <p>
-      This page was built with the <strong>Superpowers</strong> methodology
-      inside Claude Code — three built-in capabilities that review and improve
-      every slice of work:
-    </p>
-    <div class="toolchain-grid">
-
-      <div class="card">
-        <div class="icon">🧠</div>
-        <h3>UI UX Pro Max</h3>
-        <p>Skill that reviewed layout, spacing, readability, and visual hierarchy</p>
-        <a href="./.claude/skills/ui-ux-pro-max/SKILL.md" class="filepath">.claude/skills/ui-ux-pro-max/SKILL.md</a>
-      </div>
-
-      <div class="card">
-        <div class="icon">🤖</div>
-        <h3>Profile Reviewer</h3>
-        <p>Agent that checked clarity, honesty, structure, and Ch3 readiness</p>
-        <a href="./.claude/agents/profile-reviewer.md" class="filepath">.claude/agents/profile-reviewer.md</a>
-      </div>
-
-      <div class="card">
-        <div class="icon">🔌</div>
-        <h3>Filesystem MCP</h3>
-        <p>Safe project file access — scoped to <code>./</code>, no API keys, no secrets</p>
-        <a href="./.mcp.json" class="filepath">.mcp.json</a>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ═══ PROJECT EVIDENCE ═══ -->
-  <section>
-    <h2>Project Evidence</h2>
+    <h2>About Me</h2>
     <div class="card">
-      <h3>Ch3 Deliverables</h3>
-      <p>Every Chapter 3 requirement is a verifiable file in this repo:</p>
-      <div class="evidence-links">
-        <a href="./spec.md">📋 Spec</a>
-        <a href="./methodology.md">📓 Methodology</a>
-        <a href="./.mcp.json">🔌 MCP Config</a>
-        <a href="./.claude/skills/ui-ux-pro-max/SKILL.md">🧠 Skill</a>
-        <a href="./.claude/agents/profile-reviewer.md">🤖 Agent</a>
-        <a href="./slides/pechakucha-6x20.md">📽 Slides</a>
-      </div>
+      <ul>
+        <li>🛜 Network engineer with bold ideas</li>
+        <li>💼 Founder of Local app</li>
+        <li>🌐 You can access all my open-source projects here on GitHub</li>
+      </ul>
     </div>
   </section>
+
+  <!-- ═══ WHAT I'M UP TO ═══ -->
+  <section>
+    <h2>What I'm up to</h2>
+    <p>🔨 I'm currently...</p>
+    <div class="yaml-block">
+      - Working on My Own Business!<br>
+      - Building Server, Maintenance.
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══ ONE DAY I HOPE TO ═══ -->
+  <section>
+    <h2>One day I hope to</h2>
+    <div class="quote">
+      Sitting alone on a bench under a huge tree, sipping coffee in the gentle rain,
+      and just peacefully watching the world's beauty — that's all I want.
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section>
+    <h2>How to reach me</h2>
+    <p>You can reach me. Follow my socials!</p>
+    <div class="contact-links">
+      <a href="https://www.facebook.com/aungmyomyat.npt" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://github.com/NoobFromMM" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <!-- ═══ CH3 EVIDENCE ═══ -->
+  <div class="evidence-footer">
+    <p>
+      Built with Claude Code &amp; Superpowers ·
+      <a href="./spec.md">spec</a> ·
+      <a href="./methodology.md">methodology</a> ·
+      <a href="./.mcp.json">MCP</a> ·
+      <a href="./.claude/skills/ui-ux-pro-max/SKILL.md">skill</a> ·
+      <a href="./.claude/agents/profile-reviewer.md">agent</a> ·
+      <a href="./slides/pechakucha-6x20.md">slides</a>
+    </p>
+  </div>
 
   <!-- ═══ FOOTER ═══ -->
   <footer>

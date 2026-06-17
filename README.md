@@ -4,59 +4,40 @@
 
 🌐 Portfolio website: [noobfrommm.github.io/NoobFromMM](https://noobfrommm.github.io/NoobFromMM/)
 
-**Network engineer. Founder of Local app. Building practical systems.**
+---
+
+## About Me
+
+- 🛜 Network engineer with bold ideas
+- 💼 Founder of Local app
+- 🌐 You can access all my open-source projects here on GitHub
 
 ---
 
-## About
+## What I'm up to
 
-I'm a network engineer with bold ideas. I hold a Bachelor of Arts from the
-**University of Monywa** (class of 2013). I founded **Local app** and I
-currently run my own business, where I build and maintain servers.
+- 🔨 I'm currently...
 
-I like building practical tools and systems — things that solve real problems
-and keep running.
-
----
-
-## What I'm doing
-
-- 🏢 Running my own business
-- 🖥 Building and maintaining servers
-- 🛠 Learning modern developer workflows with [Claude Code](https://claude.com/claude-code)
-- 📂 Working through **Vibe Code Tours** to learn AI-assisted development
+```yaml
+- Working on My Own Business!
+- Building Server, Maintenance.
+```
 
 ---
 
-## Learning Journey — Vibe Code Tours
+## One day I hope to
 
-- **Ch 1** — Repo & CLAUDE.md setup ([NoobFromMM/NoobFromMM](https://github.com/NoobFromMM/NoobFromMM))
-- **Ch 2** — Methodology foundation ([methodology.md](./methodology.md))
-- **Ch 3** (current) — Profile OS: portfolio & workflow showcase ([spec.md](./spec.md))
-
----
-
-## How this portfolio was built
-
-This repo was built with the **Superpowers** methodology — skills, agents,
-and MCP — inside Claude Code.
-
-| Tool | What it reviewed | File |
-|------|-----------------|------|
-| 🧠 UI UX Pro Max skill | Layout, readability, visual hierarchy | [SKILL.md](./.claude/skills/ui-ux-pro-max/SKILL.md) |
-| 🤖 Profile reviewer agent | Clarity, honesty, Ch3 readiness | [profile-reviewer.md](./.claude/agents/profile-reviewer.md) |
-| 🔌 Filesystem MCP | Safe project file access, no secrets | [.mcp.json](./.mcp.json) |
-
-### Evidence
-
-- 📋 [Project spec](./spec.md)
-- 📓 [Methodology](./methodology.md)
-- 📽 [PechaKucha slides](./slides/pechakucha-6x20.md)
-- 🌐 [Portfolio page](./index.html)
+*Sitting alone on a bench under a huge tree, sipping coffee in the gentle rain,
+and just peacefully watching the world's beauty — that's all I want.*
 
 ---
 
-## Connect
+## How to reach me
 
-- **GitHub:** [NoobFromMM](https://github.com/NoobFromMM)
-- **Repo:** [NoobFromMM/NoobFromMM](https://github.com/NoobFromMM/NoobFromMM)
+You can reach me. Follow my socials!
+
+- **Facebook:** [aungmyomyat.npt](https://www.facebook.com/aungmyomyat.npt)
+
+---
+
+<sub>Built with Claude Code & Superpowers. Evidence: [spec](./spec.md) · [methodology](./methodology.md) · [MCP](./.mcp.json) · [skill](./.claude/skills/ui-ux-pro-max/SKILL.md) · [agent](./.claude/agents/profile-reviewer.md) · [slides](./slides/pechakucha-6x20.md)</sub>
