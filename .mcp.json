@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/mcp-filesystem",
+        "./"
+      ],
+      "description": "Gives Claude Code read/write access to the NoobFromMM project directory. Scoped to ./ so agents and skills can review project files without accessing the rest of the filesystem."
+    }
+  }
+}
