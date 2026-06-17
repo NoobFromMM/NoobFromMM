@@ -104,23 +104,18 @@
     color: var(--purple);
   }
 
-  /* ── Banner Placeholder ── */
-  .banner-placeholder {
-    min-height: 120px;
-    border: 1px solid var(--border);
+  /* ── Banner ── */
+  .banner {
+    margin-bottom: 2rem;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 3.5rem;
-    background: var(--card-bg);
-    opacity: 0.65;
+    overflow: hidden;
+    line-height: 0;
   }
-  .banner-placeholder .banner-hint {
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.82rem;
-    line-height: 1.6;
+  .banner-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
   }
 
   /* ── Cards ── */
@@ -289,18 +284,15 @@
     </div>
   </section>
 
-  <!-- ═══ BANNER PLACEHOLDER ═══ -->
-  <!--
-    PLACEHOLDER: Add a 780×200 dark-themed animated GIF or static banner here.
-    Recommended: a subtle tech-themed banner — circuit lines, server rack
-    silhouette, or a network topology animation with dark background (#0d1117).
-    Keep it under 500 KB for fast loading.
-  -->
-  <div class="banner-placeholder">
-    <div class="banner-hint">
-      🖼 Banner placeholder<br>
-      <span style="font-size:0.72rem;">Suggested: 780×200 dark tech-themed GIF &mdash; circuit lines, server silhouette, or network animation</span>
-    </div>
+  <!-- ═══ BANNER ═══ -->
+  <div class="banner">
+    <img
+      src="./assets/intro.gif"
+      alt="Hi there! I'm NoobFromMM — Network Engineer · Local App Founder · Server Builder"
+      width="780"
+      height="200"
+      class="banner-img"
+    >
   </div>
 
   <!-- ═══ ABOUT ═══ -->

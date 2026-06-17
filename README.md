@@ -1,5 +1,7 @@
 # Myat Thaw Maung
 
+![Hi there! I'm NoobFromMM — Network Engineer · Local App Founder · Server Builder](./assets/intro.gif)
+
 **Network engineer. Founder of Local app. Building practical systems.**
 
 ---
