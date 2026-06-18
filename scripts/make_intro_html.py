@@ -1,4 +1,28 @@
+"""
+Generate scripts/banner.html — the HTML banner with animated network background,
+typewriter text, and cursor.
+
+This script writes a self-contained HTML file. No external dependencies at
+runtime — just open the HTML in a browser to preview.
+
+CUSTOMIZATION — edit these before running:
+  - DISPLAY_NAME (line ~28):   full name shown during the initial type-in
+  - NICKNAME (line ~29):       the final nickname displayed after transform
+  - TYPE_SPEED (line ~175):    ms per character during initial type
+  - ERASE_SPEED (line ~188):   ms per character during backspace
+  - INSERT_SPEED (line ~195):  ms per character when inserting nickname
+"""
+
 from pathlib import Path
+
+# ── CUSTOMIZE THESE ────────────────────────────────────────
+# DISPLAY_NAME: your full name as it appears while typing
+# NICKNAME:     the short name that remains and gets the INSERT prefix
+# INSERT:       the text inserted before the NICKNAME
+# ────────────────────────────────────────────────────────────
+DISPLAY_NAME = "Myat Thaw Maung"
+NICKNAME = "MM"
+INSERT = "NoobFrom"
 
 out = Path(__file__).with_name("banner.html")
 
@@ -155,23 +179,29 @@ function drawNetwork(t) {
 
 requestAnimationFrame(drawNetwork);
 
-// text animation
+// ── TEXT ANIMATION ──────────────────────────────────────────
+// EDIT HERE to customize:
+//   first  = your full display name (typed first, then erased)
+//   keep   = the 1-3 letters that remain after erasing
+//   insert = the prefix inserted before those kept letters
+//   speed  = ms per character (lower = faster)
+// ────────────────────────────────────────────────────────────
 const el = document.getElementById("typed");
 const prefix = "👋 Hi there! I'm ";
-const first = "Myat Thaw Maung";
-const keep = "MM";
-const insert = "NoobFrom";
+const first = "Myat Thaw Maung";   // EDIT: your full name
+const keep = "MM";                 // EDIT: kept initials
+const insert = "NoobFrom";         // EDIT: nickname prefix
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-async function type(text, speed = 70) {
+async function type(text, speed = 70) {   // speed: ms per char
   for (let i = 1; i <= text.length; i++) {
     el.textContent = text.slice(0, i);
     await sleep(speed);
   }
 }
 
-async function eraseToMM(speed = 45) {
+async function eraseToMM(speed = 45) {    // speed: ms per char
   let name = first;
 
   // delete until only the two M letters remain
@@ -186,7 +216,7 @@ async function eraseToMM(speed = 45) {
   el.textContent = prefix + keep;
 }
 
-async function insertNoobFrom(speed = 72) {
+async function insertNoobFrom(speed = 72) {  // speed: ms per char
   let mid = "";
   for (let i = 1; i <= insert.length; i++) {
     mid = insert.slice(0, i);
@@ -195,15 +225,18 @@ async function insertNoobFrom(speed = 72) {
   }
 }
 
+// ── Animation timing ───────────────────────────────────────
+// EDIT HERE to change pauses and typing speed.
+// All values in milliseconds.
 async function runText() {
-  await sleep(350);
-  await type(prefix + first, 68);
-  await sleep(850);
+  await sleep(350);                      // initial delay before typing
+  await type(prefix + first, 68);       // type full name at 68 ms/char
+  await sleep(850);                      // pause after full name shown
 
-  await eraseToMM(38);
-  await sleep(250);
+  await eraseToMM(38);                  // erase at 38 ms/char
+  await sleep(250);                      // pause before inserting nickname
 
-  await insertNoobFrom(70);
+  await insertNoobFrom(70);             // insert nickname at 70 ms/char
 }
 
 runText();

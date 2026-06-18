@@ -1,3 +1,18 @@
+"""
+Capture scripts/banner.html as assets/intro.gif using Playwright.
+
+Workflow:
+  1. python scripts/make_intro_html.py   (generates banner.html)
+  2. python scripts/capture_banner_gif.py (captures frames → intro.gif)
+
+Requirements: pip install playwright pillow
+               playwright install chromium
+
+To capture only a frame range (e.g. frame_0000 to frame_0094):
+  Set TOTAL_FRAMES below to 95 and adjust DURATION_SECONDS accordingly
+  (DURATION_SECONDS = TOTAL_FRAMES / FPS).
+"""
+
 import asyncio
 from pathlib import Path
 from PIL import Image
