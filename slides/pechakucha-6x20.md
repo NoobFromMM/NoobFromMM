@@ -3,6 +3,8 @@ marp: true
 theme: default
 paginate: true
 size: 16:9
+transition: fade
+auto-advance: 20
 ---
 
 <!-- _class: lead -->
