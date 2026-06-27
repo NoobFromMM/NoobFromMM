@@ -40,4 +40,21 @@ You can reach me. Follow my socials!
 
 ---
 
+## Reusable Intro GIF Generator
+
+The animated intro banner at the top of this README (`assets/intro.gif`) was
+created with a standalone workflow that lives in this repo. Other students can
+copy the scripts and generate their own version — no API keys required.
+
+**What you can customize:** display name, nickname, animation speed, and frame range.
+
+**Start here:** [`scripts/README.md`](./scripts/README.md)
+
+| File | Link |
+|------|------|
+| Banner HTML | [`scripts/banner.html`](./scripts/banner.html) |
+| Generated GIF | [`assets/intro.gif`](./assets/intro.gif) |
+
+---
+
 <sub>Built with Claude Code & Superpowers. Evidence: [spec](./spec.md) · [methodology](./methodology.md) · [MCP](./.mcp.json) · [skill](./.claude/skills/ui-ux-pro-max/SKILL.md) · [agent](./.claude/agents/profile-reviewer.md) · [slides](./slides/pechakucha-6x20.md)</sub>
